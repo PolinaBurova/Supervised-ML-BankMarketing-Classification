@@ -89,15 +89,16 @@ To keep it more clear and organized, each ML model has been split into separate 
 
 3. Start a new run; Log the parameters and end with logging the final model. E.g. Logistic Regression run:
     
-- Log parameters, metrics, and model artifacts with MLflow
+- Log parameters, metrics, and model artifacts with MLflow:
+
     mlflow.log_params(clf_lr.best_params_)
     mlflow.log_metric("accuracy", score)
     mlflow.log_metric("total_cost", cost)
     mlflow.log_metric("min_cost_threshold", min_threshold[0])
     
-- Log the final model
-    mlflow.sklearn.log_model(clf_lr.best_estimator_, artifact_path="logistic_regression_pipeline", registered_model_name="logistic_regression_pipeline", input_example=X_train)
+- Log the final model:
 
+    mlflow.sklearn.log_model(clf_lr.best_estimator_, artifact_path="logistic_regression_pipeline", registered_model_name="logistic_regression_pipeline", input_example=X_train)
 
 4. End the run:
     mlflow.end_run()

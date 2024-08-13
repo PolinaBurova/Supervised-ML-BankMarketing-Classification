@@ -76,32 +76,38 @@ This way, users can easily recreate the environment using the provided conda env
 To keep it more clear and organized, each ML model has been split into separate notebooks which already include the below steps, located in /notebooks_mlflow. Each notebook has the necessary pre-processing steps and MLFlow configurations. This will ensure that each notebook can run independently without missing any required steps.
 
 1.  Define the path where MLflow will store tracking data:
-
+    ```
     uri = Path('C:\\...\\mlruns\\')
     uri.mkdir(parents=True, exist_ok=True)
     mlflow.set_tracking_uri(uri_as_uri)
+    ```
 
 2. Define MLFlow Experiment (e.g. Logistic Regression)
-    
+    ```
     mlflow.set_experiment("Logistic_Regression_Experiment")
+    ```
 
 3. Define the pipeline for pre-processing steps.
 
 3. Start a new run; Log the parameters and end with logging the final model. E.g. Logistic Regression run:
     
 - Log parameters, metrics, and model artifacts with MLflow:
-
+    ```
     mlflow.log_params(clf_lr.best_params_)
     mlflow.log_metric("accuracy", score)
     mlflow.log_metric("total_cost", cost)
     mlflow.log_metric("min_cost_threshold", min_threshold[0])
-    
-- Log the final model:
+    ```
 
+- Log the final model:
+    ```
     mlflow.sklearn.log_model(clf_lr.best_estimator_, artifact_path="logistic_regression_pipeline", registered_model_name="logistic_regression_pipeline", input_example=X_train)
+    ```
 
 4. End the run:
+    ```
     mlflow.end_run()
+    ```
 
 5. View the run in MLFlow UI - in terminal, activate rumos_bank environment:
     ```
@@ -117,27 +123,34 @@ To keep it more clear and organized, each ML model has been split into separate 
 ## Testing the registered models
 
 1. To test the registered models, go to notebook "mlflow_read_models" in notebooks_mlflow. There we can predict the output of each model and its version. Currently, it's set to logistic_regression_pipeline version 2, which is the latest version of this model: 
+    ```
     model_name = "logistic_regression_pipeline"
     model_version = "2"
 
     model = mlflow.pyfunc.load_model(f"models:/{model_name}/{model_version}")
-    model
+    ```
 
 3. Then, we created a sample of our dataset and ran a prediction using the model:
+    ```
     model.predict(input_data.drop("y", axis=1))
+    ```
     
 
 ## Running the application
 
 1. Before running the application, go to config/app and fill in the details with the best model tested. In this case, Logistic Regression, and its latest version, 3:
+    ```
     {
     "model_name": "logistic_regression_pipeline",
     "model_version": 3,
     "tracking_uri": "C:\\Users\\...\\mlruns"
 }
+    ```
 
 2. Go to src/app.py, activate the current environment (rumos_bank) and run the command:
+    ```
     `python src/app.py`
+    ```
 
 This application will read the config/app.json with the best model, which will be loaded into the application.
 It will generate a code http://127.0.0.1:5003 which will open FastAPI application (screenshots saved in /tests).
@@ -147,7 +160,10 @@ It will generate a code http://127.0.0.1:5003 which will open FastAPI applicatio
 
 1. While the http://127.0.0.1:5003 is still running, go to tests/test_requests
 2. Load "requests" and generate a list of samples from the dataset.
-3. Run the code "response = requests.post("http://127.0.0.1:5003/predict", json=request_dict)", it should give a prediction of the outcome based on the input data.
+3. Run the code 
+    ```"response = requests.post("http://127.0.0.1:5003/predict", json=request_dict)"
+    ```
+    it should give a prediction of the outcome based on the input data.
 
 
 ##  *Note on Deletion of mlruns Folder

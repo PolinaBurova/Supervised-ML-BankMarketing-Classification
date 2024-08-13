@@ -65,6 +65,7 @@ conda env remove --name rumos_bank
 conda env list  # (Optional: Check if the environment was removed)
 conda env create -f conda.yml
 conda activate rumos_bank
+```
 
 
 This way, users can easily recreate the environment using the provided conda environment file.
@@ -87,37 +88,12 @@ To keep it more clear and organized, each ML model has been split into separate 
 3. Define the pipeline for pre-processing steps.
 
 3. Start a new run; Log the parameters and end with logging the final model. E.g. Logistic Regression run:
-
-   with mlflow.start_run(run_name="Logistic Regression with Pipeline", nested = True):
-    clf_lr = GridSearchCV(pipeline, parameters, cv=5, n_jobs=-1)
-    # Fit the model
-    clf_lr.fit(X_train, y_train)
-    
-    # Predict probabilities for test data
-    y_probs = clf_lr.predict_proba(X_test)[:, 1]
-    
-    # Evaluate the logistic regression model
-    score = clf_lr.score(X_test, y_test)
-    tn, fp, fn, tp = confusion_matrix(y_test, y_probs > 0.5).ravel()
-    
-    # Calculate total cost and minimum cost threshold
-    cost, min_threshold = total_cost(y_test, y_probs), min_cost_threshold(y_test, y_probs)
     
     # Log parameters, metrics, and model artifacts with MLflow
     mlflow.log_params(clf_lr.best_params_)
     mlflow.log_metric("accuracy", score)
     mlflow.log_metric("total_cost", cost)
     mlflow.log_metric("min_cost_threshold", min_threshold[0])
-
-     # Plot total cost vs threshold curve
-    thresholds = np.arange(0, 1.1, 0.1)
-    costs = [total_cost(y_test, y_probs, threshold) for threshold in thresholds]
-    plt.plot(thresholds, costs)
-    plt.ylabel('Cost')
-    plt.xlabel('Threshold')
-    plt.title('Total Cost vs Threshold Curve')
-    plt.savefig('total_cost_vs_threshold.png')
-    mlflow.log_artifact('total_cost_vs_threshold.png')
     
     # Log the final model
     mlflow.sklearn.log_model(clf_lr.best_estimator_, artifact_path="logistic_regression_pipeline", registered_model_name="logistic_regression_pipeline", input_example=X_train)

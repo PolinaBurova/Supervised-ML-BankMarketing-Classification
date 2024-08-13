@@ -140,11 +140,9 @@ To keep it more clear and organized, each ML model has been split into separate 
 
 1. Before running the application, go to config/app and fill in the details with the best model tested. In this case, Logistic Regression, and its latest version, 3:
     ```
-    {
     "model_name": "logistic_regression_pipeline",
     "model_version": 3,
     "tracking_uri": "C:\\Users\\...\\mlruns"
-}
     ```
 
 2. Go to src/app.py, activate the current environment (rumos_bank) and run the command:
@@ -161,7 +159,8 @@ It will generate a code http://127.0.0.1:5003 which will open FastAPI applicatio
 1. While the http://127.0.0.1:5003 is still running, go to tests/test_requests
 2. Load "requests" and generate a list of samples from the dataset.
 3. Run the code 
-    ```"response = requests.post("http://127.0.0.1:5003/predict", json=request_dict)"
+    ```
+    response = requests.post("http://127.0.0.1:5003/predict", json=request_dict)"
     ```
     it should give a prediction of the outcome based on the input data.
 

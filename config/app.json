@@ -1,0 +1,5 @@
+{
+    "model_name": "logistic_regression_pipeline",
+    "model_version": 3,
+    "tracking_uri": "file:///c:/Users/polin/OneDrive/Documents/GitHub/Supervised-ML-BankPrediction-Classification/mlruns"
+}

@@ -5,15 +5,17 @@ This project focuses on a supervised learning problem where the goal is to class
 
 #### Objective
 
-The objective is to predict whether a customer will subscribe to a term deposit based on various features. By accurately predicting customer behavior, the bank can optimize its marketing efforts and reduce costs.
+This project focuses on predicting whether customers will subscribe to a term deposit, aiming to optimize the bank's marketing strategy and reduce costs. Using a supervised machine learning approach, we analyzed customer data, engineered features, and built multiple models to accurately predict customer behavior. We then created multiple models, tracked experiments using MLFlow, and deployed the best model using FastAPI. Utilizing MLOps practices, we ensured robust model development, efficient deployment, and continuous monitoring.
 
-
-The project involves performing exploratory data analysis, preprocessing, and creating visualizations to gain insights into the data. We then create multiple models, track experiments using MLFlow, and deploy the best model using FastAPI. Utilizing MLOps practices, we ensure robust model development, efficient deployment, and continuous monitoring.
-
-The goal is to minimize the bank's losses by accurately predicting which customers are likely to default on their loans.  After implementing the machine learning models, we successfully reduced the bank's losses by around 30%.
+The best-performing model, Logistic Regression, was selected for its ability to minimize the bank's losses while ensuring effective cost management. By implementing this model, the project successfully reduced potential costs by approximately half a million euros (30%), demonstrating its practical value in a real-world financial setting.
 
 ![Threshold Cost](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/Cost_Threshold.png)
+*This graph shows the relationship between the cost and threshold for the Logistic Regression model. The model was fine-tuned to select the optimal threshold (0.7), which minimized the cost to €1.29 million. This represents a significant reduction in potential losses, underlining the model's effectiveness in cost management.*
+
+
 ![PRC Curve](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/PRC_Curve.png)
+*The Precision-Recall Curve illustrates the trade-off between precision and recall for the Logistic Regression model. With an Area Under the Curve (AUC) of 0.37, this model was optimized to strike a balance between precision and recall, prioritizing the minimization of false positives and ensuring more accurate customer targeting.*
+
 
 
 **The general notebook containing all the analysis and machine learning algorithms, titled "Supervised-ML-BankPrediction-Classification," is located in the notebooks folder.**

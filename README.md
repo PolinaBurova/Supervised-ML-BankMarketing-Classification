@@ -11,7 +11,7 @@ The best-performing model, Logistic Regression, was selected for its ability to 
 
 ![Threshold Cost](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/Cost_Threshold.png)
 
-*This graph shows the relationship between the cost and threshold for the Logistic Regression model. The model was fine-tuned to select the optimal threshold (0.7), which minimized the cost to €1.29 million. This represents a significant reduction in potential losses, underlining the model's effectiveness in cost management.*
+*This graph shows the relationship between the cost and threshold for the Logistic Regression model. The model was fine-tuned to select the optimal threshold (0.7), which minimized the cost to €1.29 million. This represents a significant reduction in potential losses (baseline cost at €1.79 million), underlining the model's effectiveness in cost management.*
 
 
 ![PRC Curve](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/PRC_Curve.png)

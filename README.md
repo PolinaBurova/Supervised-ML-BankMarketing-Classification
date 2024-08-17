@@ -12,7 +12,7 @@ The project involves performing exploratory data analysis, preprocessing, and cr
 
 The goal is to minimize the bank's losses by accurately predicting which customers are likely to default on their loans.  After implementing the machine learning models, we successfully reduced the bank's losses by around 30%.
 
-![Threshold Cost]("C:\Users\polin\OneDrive\Documents\GitHub\Supervised-ML-BankPrediction-Classification\Cost_Threshold.png")
+![Threshold Cost]("Cost_Threshold.png")
 
 
 **The general notebook containing all the analysis and machine learning algorithms, titled "Supervised-ML-BankPrediction-Classification," is located in the notebooks folder.**

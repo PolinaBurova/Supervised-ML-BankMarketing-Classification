@@ -5,7 +5,7 @@ This project focuses on a supervised learning problem where the goal is to class
 
 #### Objective
 
-This project focuses on predicting whether customers will subscribe to a term deposit, aiming to optimize the bank's marketing strategy and reduce costs. Using a supervised machine learning approach, we analyzed customer data, engineered features, and built multiple models to accurately predict customer behavior. We then created multiple models, tracked experiments using MLFlow, and deployed the best model using FastAPI, ensuring robust model development, efficient deployment, and continuous monitoring.
+This project focuses on predicting whether customers will subscribe to a term deposit, aiming to optimize the bank's marketing strategy and reduce costs. Using a supervised machine learning approach, we analyzed customer data, engineered features, and built multiple models to accurately predict customer behavior. We then tracked experiments using MLFlow, and deployed the best model using FastAPI, ensuring efficient deployment and continuous monitoring.
 
 The best-performing model, Logistic Regression, was selected for its ability to minimize the bank's losses while ensuring effective cost management. By implementing this model, the project successfully reduced potential costs by approximately half a million euros (30%), demonstrating its practical value in a real-world financial setting.
 

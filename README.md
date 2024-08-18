@@ -8,17 +8,17 @@ This project focuses on predicting whether customers will subscribe to a term de
 
 ### Model Selection
 
-![Models Compare](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/ML_Models_Compare.png)
+![Models Compare](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/notebooks/ML_Models_Compare.png)
 
 The best-performing model, Logistic Regression, was selected for its ability to minimize the bank's losses while ensuring effective cost management. By implementing this model, the project successfully reduced potential costs by approximately half a million euros (30%), demonstrating its practical value in a real-world financial setting.
 
 
-![Threshold Cost](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/Cost_Threshold.png)
+![Threshold Cost](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/notebooks/Cost_Threshold.png)
 
 *This graph shows the relationship between the cost and threshold for the Logistic Regression model. The model was fine-tuned to select the optimal threshold (0.7), which minimized the cost to €1.29 million. This represents a significant reduction in potential losses (baseline cost at €1.79 million), underlining the model's effectiveness in cost management.*
 
 
-![PRC Curve](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/PRC_Curve.png)
+![PRC Curve](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/notebooks/PRC_Curve.png)
 
 *The goal is to predict sensitivity: correctly identifying positive instances in an imbalanced dataset. The Precision-Recall Curve above illustrates the trade-off between precision and recall for the Logistic Regression model. With an Area Under the Curve (AUC) of 0.37, this model was optimized to strike a balance between precision and recall, prioritizing the minimization of false positives and ensuring more accurate customer targeting.*
 

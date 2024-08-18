@@ -1,12 +1,12 @@
 # Rumos Bank Marketing Campaign
 
-#### Objective
+### Objective
 
 This project focuses on predicting whether customers will subscribe to a term deposit, aiming to optimize the bank's marketing strategy and reduce costs. Using a supervised machine learning approach, we analyzed customer data, engineered features, and built multiple models to accurately predict customer behavior. We then tracked experiments using MLFlow, and deployed the best model using FastAPI, ensuring efficient deployment and continuous monitoring.
 
 **Assumption:** In this scenario, where the total baseline cost of false positives (€3.67MM) outweighs that of false negatives (€1.78MM), prioritizing the reduction of false positives becomes imperative for minimizing the overall financial burden on the business. Therefore, the predictive model was optimized for sensitivity (recall).
 
-#### Model Selection
+### Model Selection
 
 ![Models Compare](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/ML_Models_Compare.png)
 
@@ -22,7 +22,7 @@ The best-performing model, Logistic Regression, was selected for its ability to 
 
 *The goal is to predict sensitivity: correctly identifying positive instances in an imbalanced dataset. The Precision-Recall Curve above illustrates the trade-off between precision and recall for the Logistic Regression model. With an Area Under the Curve (AUC) of 0.37, this model was optimized to strike a balance between precision and recall, prioritizing the minimization of false positives and ensuring more accurate customer targeting.*
 
-#### Model Optimization
+### Model Optimization
 **Model Validation:** We utilized Cross-validation (K-Fold) to ensure a more accurate and reliable validation process. This approach helps to maximize the use of our data for both training and validation purposes, thereby providing a better assessment of the model's performance.
 
 **Feature Selection:** Feature selection was not explicitly performed in this process because Principal Component Analysis (PCA) was employed. PCA serves to reduce the dimensionality of the dataset, effectively transforming the features into a set of linearly uncorrelated components. This step was also excluded for time-saving purposes. Recursive Feature Elimination could've been used if we hadn't used PCA.

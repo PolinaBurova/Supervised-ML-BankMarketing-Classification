@@ -4,6 +4,8 @@
 
 This project focuses on predicting whether customers will subscribe to a term deposit, aiming to optimize the bank's marketing strategy and reduce costs. Using a supervised machine learning approach, we analyzed customer data, engineered features, and built multiple models to accurately predict customer behavior. We then tracked experiments using MLFlow, and deployed the best model using FastAPI, ensuring efficient deployment and continuous monitoring.
 
+**Assumption:** In this scenario, where the total baseline cost of false positives (€3.67MM) outweighs that of false negatives (€1.78MM), prioritizing the reduction of false positives becomes imperative for minimizing the overall financial burden on the business. Therefore, the predictive model was optimized for sensitivity (recall).
+
 The best-performing model, Logistic Regression, was selected for its ability to minimize the bank's losses while ensuring effective cost management. By implementing this model, the project successfully reduced potential costs by approximately half a million euros (30%), demonstrating its practical value in a real-world financial setting.
 
 ![Threshold Cost](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/Cost_Threshold.png)

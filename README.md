@@ -1,8 +1,5 @@
 # Rumos Bank Marketing Campaign
 
-
-This project focuses on a supervised learning problem where the goal is to classify customers for a marketing campaign. 
-
 #### Objective
 
 This project focuses on predicting whether customers will subscribe to a term deposit, aiming to optimize the bank's marketing strategy and reduce costs. Using a supervised machine learning approach, we analyzed customer data, engineered features, and built multiple models to accurately predict customer behavior. We then tracked experiments using MLFlow, and deployed the best model using FastAPI, ensuring efficient deployment and continuous monitoring.

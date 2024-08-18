@@ -16,8 +16,14 @@ The best-performing model, Logistic Regression, was selected for its ability to 
 
 ![PRC Curve](https://github.com/PolinaBurova/Supervised-ML-SavingsAccount-Prediction/blob/main/PRC_Curve.png)
 
-*The Precision-Recall Curve illustrates the trade-off between precision and recall for the Logistic Regression model. With an Area Under the Curve (AUC) of 0.37, this model was optimized to strike a balance between precision and recall, prioritizing the minimization of false positives and ensuring more accurate customer targeting.*
+*The goal is to predict sensitivity: correctly identifying positive instances in an imbalanced dataset. The Precision-Recall Curve above illustrates the trade-off between precision and recall for the Logistic Regression model. With an Area Under the Curve (AUC) of 0.37, this model was optimized to strike a balance between precision and recall, prioritizing the minimization of false positives and ensuring more accurate customer targeting.*
 
+#### Model Optimization
+Model Validation: We utilized Cross-validation (K-Fold) to ensure a more accurate and reliable validation process. This approach helps to maximize the use of our data for both training and validation purposes, thereby providing a better assessment of the model's performance.
+
+Feature Selection: Feature selection was not explicitly performed in this process because Principal Component Analysis (PCA) was employed. PCA serves to reduce the dimensionality of the dataset, effectively transforming the features into a set of linearly uncorrelated components. This step was also excluded for time-saving purposes. Recursive Feature Elimination could've been used if we hadn't used PCA.
+
+Hyperparameter Tuning: To optimize the logistic regression model, we performed hyperparameter tuning using Grid Search Cross Validation. This method was selected for its simplicity and effectiveness in identifying the best hyperparameters. The hyperparameter grid focused on tuning the regularization parameter 𝐶, which controls the trade-off between achieving a low error on training data and minimizing the norm of the weights, thereby preventing overfitting. Grid Search with a cross-validation of 5 folds was used to identify the optimal C value.
 
 
 **The general notebook containing all the analysis and machine learning algorithms, titled "Supervised-ML-BankPrediction-Classification," is located in the notebooks folder.**
